@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Moja pierwsza strona z JavaScript</title>
+    <script>
+        function dzialania() {
+            var x = parseInt(prompt("x: "));//konwersja string na int
+            var y = parseInt(prompt("y: "));
+            var s = x + y;
+            var m = x * y;
+            alert("Suma = " + s);
+            alert("Iloczyn = " + m);
+        }
+    </script>
+</head>
+
+<body>
+    <!-- stary sposób obsługi zdarzeń -->
+    <button onclick="dzialania()">Kliknij mnie</button>
+</body>
+
+</html>

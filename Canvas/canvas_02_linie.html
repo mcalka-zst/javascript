@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+	<meta charset="utf-8">
+	<style type="text/css">
+		#obraz {
+			border: 1px brown solid
+		}
+	</style>
+
+
+</head>
+
+<body>
+
+	<canvas id="obraz" width="600" height="600">
+		Oj, oj. Twoja przeglądarka nie wspiera Canvas!
+	</canvas>
+	<script>
+		function rysuj() {
+			var kanwa = document.getElementById('obraz');
+			var kontekst = kanwa.getContext('2d');//getContext - umożliwia wykorzystanie funkcji rysujących
+			kontekst.fillStyle = 'yellow';
+			kontekst.strokeStyle = 'green';
+			kontekst.lineWidth = 5;
+
+			kontekst.beginPath();
+			kontekst.moveTo(10, 10);
+			kontekst.lineTo(590, 590);
+			kontekst.lineTo(10, 590);
+			kontekst.stroke();// rysuje kontur ścieżki
+
+			kontekst.beginPath();
+			kontekst.arc(300, 300, 150, 0, 2 * Math.PI);//arc(x, y, r, kąt_poczatkowy, kąt_końcowy)
+			kontekst.strokeStyle = 'red';
+			kontekst.stroke();
+			kontekst.fill();//wypełnia ścieżkę
+
+			kontekst.beginPath();
+			kontekst.arc(100, 400, 90, 0, Math.PI / 3, false);//zgodnie ze wskazówkami zegara
+			kontekst.strokeStyle = 'blue';
+			kontekst.stroke();
+
+			kontekst.beginPath();
+			kontekst.arc(100, 400, 90, 0, Math.PI / 3, true);//przeciwnie do wskazówek zegara
+			kontekst.strokeStyle = 'red';
+			kontekst.stroke();
+
+			kontekst.beginPath();
+			kontekst.arc(500, 200, 90, 0, Math.PI / 2, false);
+			kontekst.strokeStyle = 'green';
+			kontekst.fillStyle = 'pink';
+			kontekst.stroke();
+			kontekst.fill();
+
+			kontekst.beginPath();
+			kontekst.arc(500, 200, 90, 0, Math.PI / 2, true);
+			kontekst.strokeStyle = 'blue';
+			kontekst.fillStyle = 'gray';
+			kontekst.closePath();
+			kontekst.stroke();
+			kontekst.fill();
+		}
+		window.addEventListener("load", rysuj);
+	</script>
+</body>
+
+</html>

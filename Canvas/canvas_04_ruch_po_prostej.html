@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8">
+    <style type="text/css">
+        #obraz {
+            border: 1px brown solid
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <canvas id="obraz" width="1000" height="600">
+        Oj, oj. Twoja przeglądarka nie wspiera Canvas!
+    </canvas>
+    <script>
+        var x=30, y=35;
+        var ux=10,uy=5; //przesunięcie
+        function rysuj() {
+            var kanwa = document.getElementById('obraz');
+            var kontekst = kanwa.getContext('2d');//getContext - umożliwia wykorzystanie funkcji rysujących
+            var szer=kanwa.width;
+            var wys =kanwa.height;
+            kontekst.fillStyle = 'red';
+            kontekst.strokeStyle = 'green';
+            kontekst.lineWidth = 3;
+            kontekst.clearRect(0,0, 1000, 600)//czyszczenie obszaru
+            kontekst.beginPath();
+            kontekst.arc(x, y, 30, 0, 2*Math.PI);//arc(x, y, r, kąt_poczatkowy, kąt_końcowy, [odwrotnie do wskazowek])
+            kontekst.closePath();            kontekst.stroke();
+            kontekst.fill();//wypełnia ścieżke
+            x+=ux;
+            y+=uy; 
+            if(x+30>szer || x-30<0){
+                ux=-ux;
+                uy=-uy;
+            }  
+        }
+        setInterval(rysuj, 50);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8">
+    <style type="text/css">
+        #obraz {
+            border: 1px brown solid
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <canvas id="obraz" width="600" height="600">
+        Oj, oj. Twoja przeglądarka nie wspiera Canvas!
+    </canvas>
+    <script>
+        function rysuj() {
+            var kanwa = document.getElementById('obraz');
+            var kontekst = kanwa.getContext('2d');//getContext - umożliwia wykorzystanie funkcji rysujących
+            kontekst.fillStyle = 'yellow';
+            kontekst.strokeStyle = 'green';
+            kontekst.lineWidth = 5;
+
+          
+
+            kontekst.beginPath();
+            kontekst.arc(300, 300, 150, 0, 3*Math.PI/2);//arc(x, y, r, kąt_poczatkowy, kąt_końcowy, [odwrotnie do wskazowek])
+            kontekst.lineTo(300, 300);
+            kontekst.closePath();
+            kontekst.strokeStyle = 'red';
+            kontekst.stroke();
+            kontekst.fill();//wypełnia ścieżkę
+            
+            kontekst.beginPath();
+            kontekst.fillStyle = 'black';
+            kontekst.arc(250, 250, 30, 0, 2*Math.PI);
+            kontekst.stroke();
+            kontekst.fill();//wypełnia ścieżkę
+            
+        }
+        window.addEventListener("load", rysuj);
+    </script>
+</body>
+
+</html>

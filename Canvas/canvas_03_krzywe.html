@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+	<meta charset="utf-8">
+	<style type="text/css">
+		#obraz {
+			border: 1px brown solid
+		}
+	</style>
+</head>
+
+<body>
+
+	<canvas id="obraz" width="600" height="600">
+		Oj, oj. Twoja przeglądarka nie wspiera Canvas!
+	</canvas>
+	<script>
+		function rysuj() {
+			var kanwa = document.getElementById('obraz');
+			var kontekst = kanwa.getContext('2d');//getContext - umożliwia wykorzystanie funkcji rysujących
+			kontekst.lineWidth = 5;
+
+			kontekst.beginPath();
+			kontekst.moveTo(100, 50);
+			kontekst.strokeStyle = "red";
+			kontekst.quadraticCurveTo(300, 10, 500, 50);//quadraticCurveTo(PktX, PktY, x, y) – PktX, PktY są współrzędnymi punktu, wg którego krzywa jest wyginana, a x,y są współrzędnymi punktu końcowego
+			kontekst.stroke();
+
+			kontekst.beginPath();
+			kontekst.moveTo(100, 150);
+			kontekst.strokeStyle = "blue";
+			kontekst.quadraticCurveTo(200, -140, 500, 150);
+			kontekst.stroke();
+
+
+			kontekst.beginPath();
+			kontekst.moveTo(100, 500);
+			kontekst.strokeStyle = 'green';
+			kontekst.quadraticCurveTo(300, 20, 500, 500);
+			kontekst.closePath();
+			kontekst.stroke();
+		}
+		window.addEventListener("load", rysuj);
+	</script>
+</body>
+
+</html>
