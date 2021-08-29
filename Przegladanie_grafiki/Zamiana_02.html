@@ -1,0 +1,24 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+ <meta charset="utf-8"/>
+
+ <title>Strona </title>
+
+ <body> 
+	<img src="obrazy/zaba.gif" id="obraz1"/> <img src="obrazy/kot.gif" id="obraz2"/>
+	<br/>
+	<button id="zmiana"> Zmień </button>
+	<script>
+		document.getElementById('zmiana').onclick = function()
+		{
+			var obraz1=document.getElementById("obraz1");
+			var obraz2=document.getElementById("obraz2");
+			var temp=obraz2.src;
+			obraz2.src = obraz1.src;
+			obraz1.src=temp;
+		}
+
+	</script>
+</body>
+</html>

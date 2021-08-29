@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    Temperatura w stopniach: 
+    <input id="c" />
+    <p id="k"></p>
+    <script>
+        function stopnie(){
+             var c=parseFloat(document.querySelector("#c").value);
+             var k=c+273.15;
+             var f=c*1.8+32
+             document.querySelector("#k").innerHTML=`${c}C = ${k}K = ${f}F`;
+        }
+        
+        setInterval("stopnie()",1000);//uruchamia funkcję stopnie co 1000 milisekund
+    </script>
+</body>
+</html>

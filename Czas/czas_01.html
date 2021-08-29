@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Zegar</title>
+</head>
+
+<body>
+    <div id="czas"> </div>
+    <script>
+        function miesiac(x){
+            switch(x){
+                case 0: return 'styczeń';
+                case 1: return 'luty';
+                case 2: return 'marzec';
+                case 3: return 'kwiecień';
+                case 4: return 'maj';
+                case 5: return 'czerwiec';
+                case 6: return 'lipiec';
+                case 7: return 'sierpień';
+                case 8: return 'wrzesień';
+                case 9: return 'październik';
+                case 10: return 'listopad';
+                case 11: return 'grudzień';
+
+            }
+        }
+        function zegar() {
+            var teraz = new Date();
+            var sekundy = teraz.getSeconds();
+            if(sekundy < 10) sekundy = '0'+ sekundy;
+            var minuty = teraz.getMinutes();
+            if(minuty < 10) minuty = '0'+ minuty;
+            var godziny = teraz.getHours();
+            if(godziny < 10) godziny = '0'+ godziny;
+            var rok = teraz.getFullYear();// albo rok = teraz.getYear()+1900;
+            var m = teraz.getMonth();
+            var d = teraz.getDate();//dzień miesiąca
+            document.querySelector("#czas").innerHTML = `${godziny} : ${minuty} : ${sekundy} <br/>`;
+            document.querySelector("#czas").innerHTML += `Mamy ${d} ${miesiac(m)}  ${rok} rok`;
+        }
+        setInterval(zegar, 1000);
+    </script>
+</body>
+
+</html>

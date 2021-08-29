@@ -1,0 +1,36 @@
+<!DOCTYPE HTML">
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <style>
+        .min{
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <img class="min" id="0" src="obrazy/1min.jpg" />
+        <img class="min" id="1" src="obrazy/2min.jpg" />
+        <img class="min" id="2" src="obrazy/3min.jpg" />
+    </div>
+    <div>
+        <img id="obraz" src="obrazy/1.jpg" />
+    </div>
+    <script>
+        var obrazki = new Array('obrazy/1.jpg', 'obrazy/2.jpg', 'obrazy/3.jpg');
+        function zmien() {
+
+            var nr = event.target.id;//pobiera id kliknietego obiektu
+            document.getElementById('obraz').src = obrazki[nr];
+        }
+        var miniatury = document.getElementsByClassName('min');//
+        //for(let i=0;i< miniatury.length; i++) miniatury[i].onclick=zmien;
+        for (let i = 0; i < miniatury.length; i++) miniatury[i].addEventListener('click', zmien);
+    </script>
+</body>
+
+</html>

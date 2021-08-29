@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title> Tablice</title>
+
+<body>
+    <p id="akapit">
+        Oto tablica:<br />
+    </p>
+    <script>
+        var tab = new Array(3);//tablica 3 - elementowa
+        tab[0] = 8; //1 i 2 będą tu undefined
+        tab.push(3);
+        tab.push(6);
+        tab.push(-5.7);
+        tab.push("tere fere");
+        for (let i = 0; i < tab.length; i++) document.querySelector("#akapit").innerHTML += tab[i] + "<br/> ";
+    </script>
+</body>
+
+</html>

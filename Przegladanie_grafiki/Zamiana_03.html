@@ -1,0 +1,32 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+
+    <title>Strona </title>
+
+
+<body>
+    <img src="obrazy/zaba.gif" id="obrazeczek" />
+    <script>
+        var obraz1 = new Image();//tworzymy obiekt klasy Image
+        obraz1.src = 'obrazy/kot.gif';
+
+        var obraz2 = new Image();
+        obraz2.src = 'obrazy/zaba.gif';
+
+        var obraz = document.querySelector('#obrazeczek');
+        obraz.addEventListener('mouseover', ()=>{
+            obraz.src = obraz1.src; //funkcje strzałowe nie mają własnego this
+        } );
+          
+        obraz.addEventListener('mouseout', function(){
+            this.src = obraz2.src;
+        } );
+
+    </script>
+</body>
+
+</html>

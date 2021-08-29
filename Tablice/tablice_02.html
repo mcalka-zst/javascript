@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title> Tablice</title>
+
+<body>
+    <p id="akapit">
+        Oto tablica:<br />
+    </p>
+    <script>
+        var tab = [2, 34, 6, 78, -6.8, "Ala je bigos"];
+        tab.push(3);
+        tab.push(6);
+        tab.push("tere fere");
+        for (let i = 0; i < tab.length; i++) document.querySelector("#akapit").innerHTML += tab[i] + "<br/> ";
+    </script>
+</body>
+
+</html>

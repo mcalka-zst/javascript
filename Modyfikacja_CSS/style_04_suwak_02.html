@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Znikanie</title>
+</head>
+
+<body>
+    <img id="hipcio" src="hippo.jpg" alt="hipcio" />
+    Widoczność: <input type="range" id="procent" value="100" /> <span id="ilosc"></span><br /><br />
+    <script>
+        setInterval(()=>{
+            let procent = parseInt(document.querySelector("#procent").value);
+            document.querySelector("#ilosc").innerHTML = `${procent}%`;
+            document.querySelector("#hipcio").style.opacity = procent / 100;
+        }, 500);
+    </script>
+</body>
+
+</html>

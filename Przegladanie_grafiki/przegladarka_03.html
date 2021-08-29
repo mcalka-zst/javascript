@@ -1,0 +1,32 @@
+<!DOCTYPE HTML">
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <style>
+        .min{
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        var obrazki = new Array('obrazy/1.jpg', 'obrazy/2.jpg', 'obrazy/3.jpg');
+        function zmien(nr) {
+            document.getElementById('obraz').src = obrazki[nr];
+        }
+
+    </script>
+</head>
+
+<body>
+    <div>
+        <img id="0" class="min" onclick="zmien(0)" src="obrazy/1min.jpg" />
+        <img id="1" class="min" onclick="zmien(1)" src="obrazy/2min.jpg" />
+        <img id="2" class="min" onclick="zmien(2)" src="obrazy/3min.jpg" />
+    </div>
+    <div>
+        <img id="obraz" src="obrazy/1.jpg" />
+    </div>
+
+</body>
+
+</html>

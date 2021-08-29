@@ -1,0 +1,47 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<style>
+		.lapka {
+			cursor: pointer
+		}
+
+		p {
+			text-align: center
+		}
+
+		#obraz {
+			width: 800px
+		}
+	</style>
+</head>
+
+<body>
+	<p>
+		<img class="lapka" id="tyl" src="obrazy/strzalaL.gif" />
+		<img id="obraz" src="obrazy/1.jpg" />
+		<img class="lapka" id="przod" src="obrazy/strzalaP.gif" />
+	</p>
+	<script>
+		var nr = 0;
+		var obrazki = ['obrazy/1.jpg', 'obrazy/2.jpg', 'obrazy/3.jpg', 'obrazy/4.jpg', 'obrazy/5.jpg'];
+		function doPrzodu() {
+			nr++;
+			if (nr == obrazki.length) nr = 0;
+			document.querySelector('#obraz').src = obrazki[nr];
+		}
+		function doTylu() {
+			// uzupełnij kod funkcji
+
+		}
+		
+
+		
+		document.querySelector("#tyl").addEventListener("click",doTylu); 
+		document.querySelector("#przod").addEventListener("click",doPrzodu);
+	</script>
+</body>
+
+</html>
