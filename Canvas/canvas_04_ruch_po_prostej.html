@@ -20,18 +20,19 @@
     <script>
         var x = 30, y = 35;
         var ux = 10, uy = 5; //przesunięcie
+        var kanwa = document.getElementById('obraz');
+        var kontekst = kanwa.getContext('2d');//getContext - umożliwia wykorzystanie funkcji rysujących
+        var szer = kanwa.width;
+        var wys = kanwa.height;
         function rysuj() {
-            var kanwa = document.getElementById('obraz');
-            var kontekst = kanwa.getContext('2d');//getContext - umożliwia wykorzystanie funkcji rysujących
-            var szer = kanwa.width;
-            var wys = kanwa.height;
             kontekst.fillStyle = 'red';
             kontekst.strokeStyle = 'green';
             kontekst.lineWidth = 3;
             kontekst.clearRect(0, 0, 1000, 600)//czyszczenie obszaru
             kontekst.beginPath();
             kontekst.arc(x, y, 30, 0, 2 * Math.PI);//arc(x, y, r, kąt_poczatkowy, kąt_końcowy, [odwrotnie do wskazowek])
-            kontekst.closePath(); kontekst.stroke();
+            kontekst.closePath(); 
+            kontekst.stroke();
             kontekst.fill();//wypełnia ścieżke
             x += ux;
             y += uy;
