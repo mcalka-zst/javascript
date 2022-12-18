@@ -1,0 +1,45 @@
+body {
+    background-color: rgb(89, 4, 6);
+}
+
+#data {
+    margin: auto;
+    width: 80%;
+    background-color: black;
+    padding: 2%;
+    text-align: center;
+    color: white;
+    font-size: 1.8em;
+}
+
+input {
+    width: 30vh;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+input, button, select {
+    font-size:0.8em;
+    text-align: center;
+}
+select{
+    width: 50wh;
+}
+#btnClear{
+    display: none; 
+}
+a{
+    color:yellow;
+}
+#result {
+    margin: auto;
+    width: 80%;
+    background-color: rgb(50, 4, 4);
+    padding: 2%;
+    text-align: center;
+    color: white;
+    font-size: 2em;
+    display: none;
+}
